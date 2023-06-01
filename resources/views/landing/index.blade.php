@@ -1,5 +1,27 @@
-@include('user.template.header')
-{{-- @include('user.template.topbar') --}}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ogani | Template</title>
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="{{ asset('user/css/bootstrap.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('user/css/font-awesome.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('user/css/elegant-icons.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('user/css/nice-select.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('user/css/jquery-ui.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('user/css/owl.carousel.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('user/css/slicknav.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('user/css/style.css') }}" type="text/css">
+</head>
 
 <body>
     <!-- Page Preloder -->
@@ -11,18 +33,18 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="#"><img src="{{ asset('user/img/logo.png') }}" alt=""></a>
+            <a href="#"><img src="img/logo.png" alt=""></a>
         </div>
         <div class="humberger__menu__cart">
             <ul>
                 <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                <li><a href="{{ route('showItem') }}"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                <li><a href="{{ route('login') }}"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
             </ul>
             <div class="header__cart__price">item: <span>$150.00</span></div>
         </div>
         <div class="humberger__menu__widget">
             <div class="header__top__right__language">
-                <img src="{{ asset('user/img/language.png') }}" alt="">
+                <img src="img/language.png" alt="">
                 <div>English</div>
                 <span class="arrow_carrot-down"></span>
                 <ul>
@@ -31,7 +53,7 @@
                 </ul>
             </div>
             <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
+                <a href="{{ url('login') }}"><i class="fa fa-user"></i> Login</a>
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
@@ -71,14 +93,11 @@
         <div class="header__top">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__left">
                             <ul>
                                 <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
                                 <li>Free Shipping for all Order of $99</li>
-                                <li><a href="{{ url('cart') }}"><i class="fa fa-shopping-bag"></i> </a></li>
-
                             </ul>
                         </div>
                     </div>
@@ -91,7 +110,7 @@
                                 <a href="#"><i class="fa fa-pinterest-p"></i></a>
                             </div>
                             <div class="header__top__right__language">
-                                <img src="{{ asset('user/img/language.png') }}" alt="">
+                                <img src="img/language.png" alt="">
                                 <div>English</div>
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
@@ -99,55 +118,9 @@
                                     <li><a href="#">English</a></li>
                                 </ul>
                             </div>
-                            <li class="dropdown user-dropdown">
-                                <a href="#" class="dropdown-toggle me-n1" data-bs-toggle="dropdown">
-                                    <div class="user-toggle">
-                                        <div class="user-avatar sm">
-                                            <em class="icon ni ni-user-alt"></em>
-                                        </div>
-                                        <div class="user-info d-none d-xl-block">
-                                            <div class="user-status user-status-unverified">Unverified</div>
-                                            <div class="user-name dropdown-indicator"> {{ Auth::user()->name }}</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-md dropdown-menu-end">
-                                    <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
-                                        <div class="user-card">
-                                            <div class="user-avatar">
-                                                <span>AB</span>
-                                            </div>
-                                            <div class="user-info">
-                                                <span class="lead-text"> {{ Auth::user()->name }}</span>
-                                                <span class="sub-text"> {{ Auth::user()->email }}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="dropdown-inner">
-                                        <ul class="link-list">
-                                            <li><a href="html/user-profile-regular.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
-                                            <li><a href="html/user-profile-setting.html"><em class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
-                                            <li><a href="html/user-profile-activity.html"><em class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
-                                            <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Dark Mode</span></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="dropdown-inner">
-                                        <ul class="link-list">
-                                            <li><a href="{{ url('logout') }}"
-                                                class="dropdown-item" href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                                <em class="icon ni ni-signout"></em><span>{{ __('Logout') }}</span></a></li>
-
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                @csrf
-                                        </form>
-
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
+                            <div class="header__top__right__auth">
+                                <a href="{{ url('login') }}"><i class="fa fa-user"></i> Login</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -157,7 +130,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="{{ asset('user/img/logo.png') }}" alt=""></a>
+                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -182,7 +155,7 @@
                     <div class="header__cart">
                         <ul>
                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="{{ url('cart') }}"><i class="fa fa-shopping-bag"></i> </a></li>
+                            <li><a href="{{ route('login') }}"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
                         </ul>
                         <div class="header__cart__price">item: <span>$150.00</span></div>
                     </div>
@@ -262,27 +235,27 @@
             <div class="row">
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{{ asset('user/img/categories/cat-1.jpg') }}">
+                        <div class="categories__item set-bg" data-setbg="img/categories/cat-1.jpg">
                             <h5><a href="#">Fresh Fruit</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{{ asset('user/img/categories/cat-2.jpg') }}">
+                        <div class="categories__item set-bg" data-setbg="img/categories/cat-2.jpg">
                             <h5><a href="#">Dried Fruit</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{{ asset('user/img/categories/cat-3.jpg') }}">
+                        <div class="categories__item set-bg" data-setbg="img/categories/cat-3.jpg">
                             <h5><a href="#">Vegetables</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{{ asset('user/img/categories/cat-4.jpg') }}">
+                        <div class="categories__item set-bg" data-setbg="img/categories/cat-4.jpg">
                             <h5><a href="#">drink fruits</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{{ asset('user/img/categories/cat-1.jpg') }}">
+                        <div class="categories__item set-bg" data-setbg="img/categories/cat-5.jpg">
                             <h5><a href="#">drink fruits</a></h5>
                         </div>
                     </div>
@@ -311,20 +284,14 @@
                     </div>
                 </div>
             </div>
+
             <div class="row featured__filter">
                 @foreach ($product as $product)
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="{{ Storage::url($product->image) }}">
                             <ul class="featured__item__pic__hover">
-                                <form action="{{ url('add_item', $product->id) }}" method="POST">
-                                    @csrf
-                                    @method('POST')
-
-                                            <input type="number" name="quantity" value="1" min="1">
-                                            <input type="submit" value="Add" class="btn btn-success">
-
-                                </form>
+                                <li><a href="{{ url('login') }}"><i class="btn btn-primary">+</i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
@@ -631,4 +598,83 @@
     </section>
     <!-- Blog Section End -->
 
-    @include('user.template.footer')
+    <!-- Footer Section Begin -->
+    <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        </div>
+                        <ul>
+                            <li>Address: 60-49 Road 11378 New York</li>
+                            <li>Phone: +65 11.188.888</li>
+                            <li>Email: hello@colorlib.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                    <div class="footer__widget">
+                        <h6>Useful Links</h6>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">About Our Shop</a></li>
+                            <li><a href="#">Secure Shopping</a></li>
+                            <li><a href="#">Delivery infomation</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Our Sitemap</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Who We Are</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Innovation</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Join Our Newsletter Now</h6>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Enter your mail">
+                            <button type="submit" class="site-btn">Subscribe</button>
+                        </form>
+                        <div class="footer__widget__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+<script src="{{ asset('user/js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ asset('user/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('user/js/jquery.nice-select.min.js') }}"></script>
+<script src="{{ asset('user/js/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('user/js/jquery.slicknav.js') }}"></script>
+<script src="{{ asset('user/js/mixitup.min.js') }}"></script>
+<script src="{{ asset('user/css/owl.carousel.min.css') }}"></script>
+<script src="{{ asset('user/js/main.js') }}"></script>
+
+</body>
+
+</html>
