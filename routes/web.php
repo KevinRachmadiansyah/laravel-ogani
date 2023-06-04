@@ -4,6 +4,8 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\AdminController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,16 +33,26 @@ Route::prefix('supplier')
     ->group(function (){
         Route::get('/','index')->name('products');
         Route::get('/dashboard', 'showDashboard')->name('show.products');
+        Route::get('/order', 'showOrder')->name('show.orders');
         Route::get('/add','add');
         Route::get('/edit/{id}','edit')->name('edit.products');
         Route::put('/edit/{id}','update')->name('update.products');
         Route::post('/store ', 'store');
         Route::delete('/{id}','destroy')->name('delete.products');
+        Route::delete('/order/{id}','destroyOrder')->name('delete.order');
     });
 // Route::get('/dashboard',[SupplierController::class, 'getDashboard'])->name('dashboard.products');
 
 Route::post('/add_item/{id}', [HomeController::class, 'add_item']);
 Route::get('/cart', [HomeController::class, 'showItem'])->name('showItem');
-Route::DELETE('/remove/{id}', [HomeController::class, 'destroyItem'])->name('destroyItem');
+Route::DELETE('/remove/{id}', [HomeController::class, 'destroyItem'])->name('destroy.item');
+Route::get('cash_order', [HomeController::class, 'cashOrder']);
+Route::get('stripe/{totalPrice}', [HomeController::class, 'stripe']);
+Route::post('stripe/{totalPrice}', [HomeController::class, 'stripePost'])->name('stripe.post');
+Route::get('transactions', [AdminController::class, 'showTransactions']);
+Route::get('transactions/{id}', [AdminController::class, 'delivery_status']);
+
+
+
 
 

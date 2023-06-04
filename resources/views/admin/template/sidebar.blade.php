@@ -40,58 +40,18 @@
                                     <h6 class="overline-title text-primary-alt">Dashboards</h6>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
-                                    <a href="{{ url('/dashboard') }}" class="nk-menu-link">
+                                    <a href=" {{ url('redirect') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-cart-fill"></em></span>
                                         <span class="nk-menu-text">Dashboard</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
-                                    <a href="{{ url('/partner')}}" class="nk-menu-link">
+                                    <a href="{{ url('/transactions')}}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-activity-round-fill"></em></span>
-                                        <span class="nk-menu-text">Partnership</span>
+                                        <span class="nk-menu-text">Transactions</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item has-sub">
-                                    <a href="#" class="nk-menu-link nk-menu-toggle">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb-fill"></em></span>
-                                        <span class="nk-menu-text">Company</span>
-                                    </a>
-                                    <ul class="nk-menu-sub">
-                                        <li class="nk-menu-item">
-                                            <a href="{{ url('company/accounts') }}" class="nk-menu-link"><span class="nk-menu-text">Account</span></a>
-                                        </li>
-                                        <li class="nk-menu-item">
-                                            <a href="{{ url('company/projects') }}" class="nk-menu-link"><span class="nk-menu-text">Project List</span></a>
-                                        </li>
-                                    </ul><!-- .nk-menu-sub -->
-                                </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item">
-                                    <a href="{{ url('/products') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-growth-fill"></em></span>
-                                        <span class="nk-menu-text">Products</span>
-                                    </a>
-                                </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item has-sub">
-                                    <a href="#" class="nk-menu-link nk-menu-toggle">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb-fill"></em></span>
-                                        <span class="nk-menu-text">Donation</span>
-                                    </a>
-                                    <ul class="nk-menu-sub">
-                                        <li class="nk-menu-item">
-                                            <a href="{{ url('donation/manage') }}" class="nk-menu-link"><span class="nk-menu-text">Manage</span></a>
-                                        </li>
-                                        <li class="nk-menu-item">
-                                            <a href="{{ url('donation/transactions') }}" class="nk-menu-link"><span class="nk-menu-text">Transactions</span></a>
-                                        </li>
-                                    </ul><!-- .nk-menu-sub -->
-                                </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item">
-                                    <a href="{{ url('/ukm') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-growth-fill"></em></span>
-                                        <span class="nk-menu-text">UKM Tani</span>
-                                    </a>
-                                </li><!-- .nk-menu-item -->
-                            </ul><!-- .nk-menu -->
+                                                            </ul><!-- .nk-menu -->
                         </div><!-- .nk-sidebar-menu -->
                     </div><!-- .nk-sidebar-content -->
                 </div><!-- .nk-sidebar-element -->

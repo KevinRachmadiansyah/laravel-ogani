@@ -21,19 +21,32 @@
                     <div class="nk-sidebar-content">
                         <div class="nk-sidebar-menu" data-simplebar>
                             <ul class="nk-menu">
-
+                                {{-- <li class="nk-menu-heading">
+                                    <h6 class="overline-title text-primary-alt">Use-Case Preview</h6>
+                                </li><!-- .nk-menu-item -->
+                                <li class="nk-menu-item">
+                                    <a href="html/ecommerce/index.html" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-bag"></em></span>
+                                        <span class="nk-menu-text">E-Commerce Panel</span><span class="nk-menu-badge">HOT</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
+                                <li class="nk-menu-item">
+                                    <a href="html/lms/index.html" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-book-read"></em></span>
+                                        <span class="nk-menu-text">LMS Panel</span><span class="nk-menu-badge">HOT</span>
+                                    </a>
+                                </li><!-- .nk-menu-item --> --}}
                                 <li class="nk-menu-heading">
                                     <h6 class="overline-title text-primary-alt">Dashboards</h6>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
-                                    <a href="{{ route('show.products') }}" class="nk-menu-link">
+                                    <a href="{{ url('redirect') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-cart-fill"></em></span>
                                         <span class="nk-menu-text">Dashboard</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
-
                                 <li class="nk-menu-item">
-                                    <a href="{{ url('/category') }}" class="nk-menu-link">
+                                    <a href="" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-growth-fill"></em></span>
                                         <span class="nk-menu-text">Category</span>
                                     </a>
@@ -47,10 +60,12 @@
                                         <li class="nk-menu-item">
                                             <a href="{{ route('products') }}" class="nk-menu-link"><span class="nk-menu-text">Manage</span></a>
                                         </li>
-
+                                        <li class="nk-menu-item">
+                                            <a href="{{ url('supplier/order') }}" class="nk-menu-link"><span class="nk-menu-text">Order</span></a>
+                                        </li>
                                     </ul><!-- .nk-menu-sub -->
+
                                 </li><!-- .nk-menu-item -->
-                                <!-- .nk-menu-item -->
                             </ul><!-- .nk-menu -->
                         </div><!-- .nk-sidebar-menu -->
                     </div><!-- .nk-sidebar-content -->

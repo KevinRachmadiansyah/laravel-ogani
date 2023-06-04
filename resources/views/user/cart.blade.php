@@ -261,11 +261,18 @@
 <!-- Breadcrumb Section End -->
 
 <!-- Shoping Cart Section Begin -->
+
 <section class="shoping-cart spad">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="shoping__cart__table">
+                    @if(session()->has('message'))
+    <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss='alert' aria-hidden="true">x</button>
+        {{ session()->get('message') }}
+    </div>
+                    @endif
                     <table>
                         <thead>
                             <tr>
@@ -295,15 +302,25 @@
                                     Rp. {{ $cart->price }}, 00
                                 </td>
 
-                                <td class="shoping__cart__item__close">
-                                    <a href="{{ route('destroyItem', $cart->id )}}" class="btn btn-danger"  onclick="return confirm('Are you sure to remove product?')"> Remove </a>
-                                </td>
+
+                                <form action="{{ route('destroy.item', $cart->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <td class="shoping__cart__item__close">
+                                        <button type="submit" class="btn btn-danger"  onclick="return confirm('Are you sure to remove product?')"> Remove </button>
+                                    </td>
+                                </form>
                             </tr>
                             <?php $totalPrice = $totalPrice + $cart->price; ?>
                             @endforeach
 
+
+
                         </tbody>
                     </table>
+
+
                 </div>
             </div>
         </div>
@@ -333,11 +350,18 @@
                         {{-- <li>Subtotal <span>$454.98</span></li> --}}
                         <li>Total <span>Rp. {{ $totalPrice }}, 00</span></li>
                     </ul>
-                    <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="shoping__cart__btns">
+                                <span class="preview-title overline-title">Payment Method</span>
+                                <a href="{{ url('cash_order') }}" class="btn btn-dim btn-outline-success">Cash on Delivery</a>
+                                <a href="{{ url('stripe', $totalPrice) }}" class="btn btn-dim btn-outline-primary">Pay via Transfer</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 @include('user.template.footer')
 

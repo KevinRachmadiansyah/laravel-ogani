@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Default Dashboard | DashLite Admin Template</title>
+    <title>Ogani</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('admin/css/dashlite.css') }}">
     <link id="skin-default" rel="stylesheet" href="{{ asset('admin/css/theme.css') }}">
@@ -35,4 +35,10 @@
     <link rel="stylesheet" href="{{ asset('user/css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/css/style.css') }}" type="text/css">
+
+    {{-- <! -- Stripe --> --}}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>

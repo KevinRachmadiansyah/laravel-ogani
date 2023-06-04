@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Order;
 
 class SupplierController extends Controller
 {
@@ -81,18 +82,37 @@ class SupplierController extends Controller
 
     }
 
+    public function showOrder(){
+        $order = Order::get('*');
+        return view('supplier.products.order', compact('order'));
+    }
+
+    public function destroyOrder($id)
+    {
+
+        $data = Order::where('id', $id)->first();
+        // dd($product);
+        if ($data == null) {
+            return redirect()->back();
+        }
+
+        $data->delete();
+
+        return redirect()->back();
+    }
+
     public function destroy($id)
     {
 
         $data = Product::where('id', $id)->first();
         // dd($product);
         if ($data == null) {
-            return redirect('products');
+            return redirect()->back();
         }
 
         $data->delete();
 
-        return redirect()->route('products');
+        return redirect()->back();;
     }
 
 }

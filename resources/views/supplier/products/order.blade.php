@@ -11,7 +11,7 @@
                                 <div class="nk-block-head nk-block-head-sm">
                                     <div class="nk-block-between">
                                         <div class="nk-block-head-content">
-                                            <h3 class="nk-block-title page-title">Products</h3>
+                                            <h3 class="nk-block-title page-title">All Orders</h3>
                                         </div><!-- .nk-block-head-content -->
                                         <div class="nk-block-head-content">
                                             <div class="toggle-wrap nk-block-tools-toggle">
@@ -44,11 +44,15 @@
                                                         </div>
                                                     </th>
                                                     <th class="nk-tb-col tb-col-sm"><span>Name</span></th>
-                                                    <th class="nk-tb-col"><span>Description</span></th>
-                                                    <th class="nk-tb-col"><span>Image</span></th>
+                                                    <th class="nk-tb-col"><span>Email</span></th>
+                                                    <th class="nk-tb-col"><span>Address</span></th>
+                                                    <th class="nk-tb-col"><span>Phone</span></th>
+                                                    <th class="nk-tb-col"><span>Product</span></th>
                                                     <th class="nk-tb-col"><span>Quantity</span></th>
                                                     <th class="nk-tb-col"><span>Price</span></th>
-                                                    <th class="nk-tb-col"><span>Discount</span></th>
+                                                    <th class="nk-tb-col"><span>Payment Status</span></th>
+                                                    <th class="nk-tb-col"><span>Delivery Status</span></th>
+                                                    <th class="nk-tb-col"><span>Image</span></th>
                                                     <th class="nk-tb-col nk-tb-col-tools">
                                                         <ul class="nk-tb-actions gx-1 my-n1">
                                                             <li class="me-n1">
@@ -71,7 +75,7 @@
                                             </thead>
 
                                             <tbody>
-                                                @foreach ($product as $product)
+                                                @foreach ($order as $order)
                                                 <tr class="nk-tb-item">
                                                     <td class="nk-tb-col nk-tb-col-check">
                                                         <div class="custom-control custom-control-sm custom-checkbox notext">
@@ -79,26 +83,41 @@
                                                             <label class="custom-control-label" for="puid1"></label>
                                                         </div>
                                                     </td>
-                                                    <td class="nk-tb-col tb-col-sm">
-                                                        <span class="tb-product">
-                                                            <span class="title">{{ $product->name }}</span>
-                                                        </span>
+                                                    <td class="nk-tb-col tb-col-sm" style="word-break: break-all">
+
+                                                         {{ $order->name }}
+
                                                     </td>
                                                     <td class="nk-tb-col" style="word-break: break-all">
-                                                        {{ $product->desc }}
+                                                        {{ $order->email }}
+                                                    </td>
+                                                    <td class="nk-tb-col" style="word-break: break-all">
+                                                        {{ $order->address }}
+                                                    </td>
+                                                    <td class="nk-tb-col" style="word-break: break-all">
+                                                        {{ $order->phone }}
+                                                    </td>
+                                                    <td class="nk-tb-col" style="word-break: break-all">
+                                                        {{ $order->product_name }}
+                                                    </td>
+                                                    <td class="nk-tb-col" style="word-break: break-all">
+                                                        {{ $order->quantity }}
                                                     </td>
                                                     <td class="nk-tb-col">
-                                                        {{-- <span class="tb-lead">{{ asset(.'images/'.$product->image) }}</span> --}}
-                                                        <img src="{{ Storage::url($product->image) }}" width="50%" height="50%" alt="">
+                                                        <span class="tb-sub">{{ $order->price }}</span>
                                                     </td>
                                                     <td class="nk-tb-col">
-                                                        <span class="tb-sub">{{ $product->qty }}</span>
+                                                        <span class="tb-sub">{{ $order->payment_status }}</span>
                                                     </td>
                                                     <td class="nk-tb-col">
-                                                        <span class="tb-sub">{{ $product->price }}</span>
-                                                    </td><td class="nk-tb-col">
-                                                        <span class="tb-sub">{{ $product->discount }}</span>
+                                                        <span class="tb-sub">{{ $order->delivery_status }}</span>
                                                     </td>
+                                                    <td class="nk-tb-col">
+                                                        {{-- <span class="tb-lead">{{ asset(.'images/'.$order->image) }}</span> --}}
+                                                        <img src="{{ Storage::url($order->image) }}" width="50px" height="50px" alt="">
+                                                    </td>
+                                                    
+
                                                     <td class="nk-tb-col nk-tb-col-tools">
                                                         <ul class="nk-tb-actions gx-1 my-n1">
                                                             <li class="me-n1">
@@ -106,15 +125,15 @@
                                                                     <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                                     <div class="dropdown-menu dropdown-menu-end">
                                                                         <ul class="link-list-opt no-bdr">
-                                                                            <li><a href="{{ url('products/edit', $product->id) }}"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li>
+                                                                            {{-- <li><a href="{{ url('products/edit', $order->id) }}"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li> --}}
                                                                             <li><a href="#"><em class="icon ni ni-eye"></em><span>View Product</span></a></li>
                                                                             <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Product Orders</span></a></li>
-                                                                            <form action="{{ route('delete.products', $product->id) }}" method="POST">
+                                                                            <form action="{{ route('delete.order', $order->id) }}" method="POST" onclick="return confirm('Anda ingin menghapus data ini?')">
                                                                             @csrf
                                                                             @method('DELETE')
                                                                             {{-- <li><a href="#"><em class="icon ni ni-trash"></em><span>Remove Product</span></a></li> --}}
                                                                             {{-- <input type="submit" class="btn btn-danger" placeholder="Remove Product"/> --}}
-                                                                            <button type="submit" class="btn btn-danger">Remove Product</button>
+                                                                            <button type="submit" class="btn btn-danger">Remove Order</button>
                                                                         </form>
                                                                         </ul>
                                                                     </div>

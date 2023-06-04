@@ -315,6 +315,7 @@
                 @foreach ($product as $product)
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                     <div class="featured__item">
+                        {{-- <a class="gallery-image popup-image" href="{{ Storage::url($product->image) }}"> --}}
                         <div class="featured__item__pic set-bg" data-setbg="{{ Storage::url($product->image) }}">
                             <ul class="featured__item__pic__hover">
                                 <form action="{{ url('add_item', $product->id) }}" method="POST">

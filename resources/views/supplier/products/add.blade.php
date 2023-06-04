@@ -13,7 +13,7 @@
     </div>
     <div class="card">
         <div class="card-inner">
-            <form action="{{ url('products/store') }}" method="POST" enctype="multipart/form-data" class="form-validate">
+            <form action="{{ url('supplier/store') }}" method="POST" enctype="multipart/form-data" class="form-validate">
             @csrf
             @method('POST')
                 <div class="row g-gs">
