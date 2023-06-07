@@ -78,7 +78,7 @@
                     </div>
                 </div>
             </li>
-            
+
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
@@ -588,8 +588,8 @@
                     </div>
                     <div class="row">
                         @foreach ($product as $product)
-                            
-                        
+
+
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="{{ Storage::url($product->image) }}">
@@ -597,18 +597,18 @@
                                         <form action="{{ url('add_item', $product->id) }}" method="POST">
                                             @csrf
                                             @method('POST')
-        
+
                                                     <input type="number" name="quantity" value="1" min="1">
                                                     <input type="submit" value="Add" class="btn btn-success">
-        
+
                                         </form>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">{{ $product->name }}</a></h6>
+                                    <h4><strong>{{ $product->name }}<strong></h4>
                             @if($product->discount!=null)
-                            <h5 style="color: blue;">{{ $product->discount }}</h5>
-                            <h5 style="text-decoration: line-through; color:red;">{{ $product->price }}</h5>
+                            <h5 style="color: blue;">Rp. {{ $product->discount }}</h5>
+                            <h5 style="text-decoration: line-through; color:red;">Rp. {{ $product->price }}</h5>
                             @else
                             <h5 style="color: blue;">{{ $product->price }}</h5>
                             @endif
