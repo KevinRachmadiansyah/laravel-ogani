@@ -36,16 +36,27 @@ class HomeController extends Controller
     public function redirect(){
         $product=Product::all();
         $usertype=Auth::user()->usertype;
+        $totalOrder=Order::all()->count();
+        $totalRevenue=Order::all()->sum('price');
+        $totalSales=Order::all()->sum('quantity');
+        $totalCheckout=Order::where('payment_status','=','Paid')->count();
         if($usertype=='1'){
             return view('admin.home');
         }
         else if($usertype=='2'){
-            return view('supplier.home');
+            return view('supplier.home', compact('totalOrder','totalRevenue','totalSales','totalCheckout'));
         }
         else{
             return view('user.home', compact('product'));
         }
     }
+
+    public function showShops(){
+        $totalProduct=Product::all()->count();
+        $product = Product::all();
+        return view('user.shop', compact('product','totalProduct'));
+    }
+
     public function add_item(Request $request, $id){
         $user = Auth::user();
         // dd($user);

@@ -15,6 +15,7 @@ class AdminController extends Controller
     public function delivery_status($id){
         $order = Order::find($id);
         $order->delivery_status = 'Done';
+        $order->payment_status = 'Paid';
         $order->save();
         return redirect()->back();
     }

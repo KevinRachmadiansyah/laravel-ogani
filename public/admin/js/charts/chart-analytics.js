@@ -211,7 +211,7 @@
           hoverOpacity: null,
           normalizeFunction: 'linear',
           scaleColors: ['#ccd7e2', '#9d72ff'],
-          selectedColor: '#854fff',
+          selectedColor: '#28a745',
           showTooltip: true,
           values: map_data.data,
           onLabelShow: function onLabelShow(event, label, code) {

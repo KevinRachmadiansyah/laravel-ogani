@@ -13,7 +13,7 @@
     </div>
     <div class="card">
         <div class="card-inner">
-            <form action="{{ url('products/edit', $product->id) }}" method="POST" enctype="multipart/form-data" class="form-validate">
+            <form action="{{ route('update.products', $product->id) }}" method="POST" enctype="multipart/form-data" class="form-validate">
             @csrf
             @method('PUT')
                 <div class="row g-gs">

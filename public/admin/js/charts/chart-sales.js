@@ -448,7 +448,7 @@
     stacked: true,
     datasets: [{
       label: "Sales Revenue",
-      color: [NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), "#854fff"],
+      color: [NioApp.hexRGB("#28a745", .2), NioApp.hexRGB("#28a745", .2), NioApp.hexRGB("#28a745", .2), NioApp.hexRGB("#28a745", .2), NioApp.hexRGB("#28a745", .2), NioApp.hexRGB("#28a745", .2), NioApp.hexRGB("#28a745", .2), NioApp.hexRGB("#28a745", .2), NioApp.hexRGB("#28a745", .2), NioApp.hexRGB("#28a745", .2), NioApp.hexRGB("#28a745", .2), "#28a745"],
       data: [11000, 8000, 12500, 5500, 9500, 14299, 11000, 8000, 12500, 5500, 9500, 14299]
     }]
   };
@@ -458,7 +458,7 @@
     stacked: true,
     datasets: [{
       label: "Active User",
-      color: [NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), NioApp.hexRGB("#854fff", .2), "#854fff"],
+      color: [NioApp.hexRGB("#28a745", .2), NioApp.hexRGB("#28a745", .2), NioApp.hexRGB("#28a745", .2), NioApp.hexRGB("#28a745", .2), NioApp.hexRGB("#28a745", .2), "#28a745"],
       data: [8200, 7800, 9500, 5500, 9200, 9690]
     }]
   };

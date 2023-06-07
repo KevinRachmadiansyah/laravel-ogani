@@ -102,7 +102,7 @@
                                                     </td>
                                                     <td class="nk-tb-col">
                                                         @if(($order->delivery_status == 'process'))
-                                                        <a href="{{ url('transactions', $order->id) }}">Update</a>
+                                                        <a href="{{ url('transactions', $order->id) }}"  class="btn btn-primary" onclick="return confirm('Anda yakin produk ini telah selesai?')">Update</a>
                                                         @else
                                                         <span class="tb-sub" style="color: green;">Selesai</span>
                                                         @endif

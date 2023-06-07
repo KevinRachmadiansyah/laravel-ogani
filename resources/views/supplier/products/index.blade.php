@@ -106,7 +106,7 @@
                                                                     <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                                                                     <div class="dropdown-menu dropdown-menu-end">
                                                                         <ul class="link-list-opt no-bdr">
-                                                                            <li><a href="{{ url('products/edit', $product->id) }}"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li>
+                                                                            <li><a href="{{ route('edit.products', $product->id) }}"><em class="icon ni ni-edit"></em><span>Edit Product</span></a></li>
                                                                             <li><a href="#"><em class="icon ni ni-eye"></em><span>View Product</span></a></li>
                                                                             <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Product Orders</span></a></li>
                                                                             <form action="{{ route('delete.products', $product->id) }}" method="POST">

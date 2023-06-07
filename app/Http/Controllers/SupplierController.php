@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
+
 
 class SupplierController extends Controller
 {
     public function index(){
+        $id = Auth::user()->id;
         $product = Product::all();
         return view('supplier.products.index', compact('product'));
     }
@@ -25,8 +28,10 @@ class SupplierController extends Controller
         return view('category.home');
     }
 
-    public function manageProducts(){
-        return view('supplier.products.index');
+    public function manageProducts($id){
+
+        $product = Product::all();
+        return view('supplier.products.index',  compact('product'));
     }
     public function showDashboard(){
         return view('supplier.home');
@@ -83,6 +88,7 @@ class SupplierController extends Controller
     }
 
     public function showOrder(){
+        $id = Auth::user()->id;
         $order = Order::get('*');
         return view('supplier.products.order', compact('order'));
     }
