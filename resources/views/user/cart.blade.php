@@ -32,17 +32,7 @@
         <ul>
             <li class="active"><a href="{{ url('redirect') }}">Home</a></li>
             <li><a href="./shop-grid.html">Shop</a></li>
-            <li><a href="#">Pages</a>
-                <ul class="header__menu__dropdown">
-                    <li><a href="./shop-details.html">Shop Details</a></li>
-                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                    <li><a href="./checkout.html">Check Out</a></li>
-                    <li><a href="./blog-details.html">Blog Details</a></li>
-                </ul>
-            </li>
-            <li><a href="./blog.html">Blog</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-        </ul>
+            </ul>
     </nav>
     <div id="mobile-menu-wrap"></div>
     <div class="header__top__right__social">
@@ -160,17 +150,7 @@
                     <ul>
                         <li><a href="{{ url('redirect') }}">Home</a></li>
                         <li class="active"><a href="./shop-grid.html">Shop</a></li>
-                        <li><a href="#">Pages</a>
-                            <ul class="header__menu__dropdown">
-                                <li><a href="./shop-details.html">Shop Details</a></li>
-                                <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                <li><a href="./checkout.html">Check Out</a></li>
-                                <li><a href="./blog-details.html">Blog Details</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                    </ul>
+                        </ul>
                 </nav>
             </div>
             <div class="col-lg-3">
@@ -328,7 +308,7 @@
             <div class="col-lg-12">
                 <div class="shoping__cart__btns">
                     <a href="{{ url('redirect') }}" class="btn btn-primary">CONTINUE SHOPPING</a>
-                    
+
                 </div>
             </div>
             <div class="col-lg-6">
