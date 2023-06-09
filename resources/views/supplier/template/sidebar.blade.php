@@ -7,9 +7,9 @@
                 <div class="nk-sidebar-element nk-sidebar-head">
                     <div class="nk-sidebar-brand">
                         <a href="{{ url('redirect') }}" class="logo-link nk-sidebar-logo">
-                            <img class="logo-light logo-img" src="{{ asset('admin/logo.png') }}" srcset="./images/logo2x.png 2x" alt="logo">
-                            <img class="logo-dark logo-img" src="{{ asset('admin/logo.png') }}" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
-                            <img class="logo-small logo-img logo-img-small" src="{{ asset('admin/logo.png') }}" srcset="./images/logo-small2x.png 2x" alt="logo-small">
+                            <img class="logo-light logo-img" src="{{ asset('admin/logo-ogani.png') }}" srcset="./images/logo2x.png 2x" alt="logo">
+                            <img class="logo-dark logo-img" src="{{ asset('admin/logo-ogani.png') }}" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
+                            <img class="logo-small logo-img logo-img-small" src="{{ asset('admin/logo-ogani.png') }}" srcset="./images/logo-small2x.png 2x" alt="logo-small">
                         </a>
                     </div>
                     <div class="nk-menu-trigger me-n2">

@@ -328,8 +328,7 @@
             <div class="col-lg-12">
                 <div class="shoping__cart__btns">
                     <a href="{{ url('redirect') }}" class="btn btn-primary">CONTINUE SHOPPING</a>
-                    <a href="#" class="btn btn-warning cart-btn cart-btn-right">
-                        Update Cart</a>
+                    
                 </div>
             </div>
             <div class="col-lg-6">
