@@ -22,9 +22,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="" alt="">
-                    {{ config('app.name') }}
+                <a href="{{ url('/') }}" class="logo-link nk-sidebar-logo">
+                    <img class="logo-small logo-img logo-img-small" src="{{ asset('admin/logo-ogani.png') }}" srcset="./images/logo-small2x.png 2x" alt="logo-small" width="200px" height="50px">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
