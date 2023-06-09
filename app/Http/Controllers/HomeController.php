@@ -8,7 +8,8 @@ use App\Models\Product;
 use App\Models\User;
 use App\Models\Cart;
 use App\Models\Order;
-use Session;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 use Stripe;
 
 class HomeController extends Controller
@@ -123,6 +124,11 @@ class HomeController extends Controller
             $cart->delete();
         }
 
+        $query = DB::table('products')
+        ->where('id',$order->product_id);
+
+        $query->decrement('qty', $order->quantity);
+
         return redirect()->back()->with('message','Your Orders has been Processed. We will get in touch soon...');
 
     }
@@ -174,6 +180,10 @@ class HomeController extends Controller
         }
 
         Session::flash('success', 'Payment successful!');
+        $query = DB::table('products')
+        ->where('id',$order->product_id);
+
+        $query->decrement('qty', $order->quantity);
 
         return back();
     }

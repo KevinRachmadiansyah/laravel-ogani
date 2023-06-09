@@ -89,6 +89,26 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label for="phone" class="col-md-4 col-form-label text-md-end"> {{ __('User Type') }} </label>
+
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio1" name="usertype" value="0" checked>Customer
+                                    <label class="form-check-label" for="radio1"></label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="radio2" name="usertype" value="2">Supplier
+                                    <label class="form-check-label" for="radio2"></label>
+                                  </div>
+                                @error('usertype')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
