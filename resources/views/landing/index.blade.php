@@ -60,7 +60,13 @@
             <ul>
                 <li class="active"><a href="./index.html">Home</a></li>
                 <li><a href="{{ url('login') }}">Shop</a></li>
-                </ul>
+                <li><a href="#">Transaction</a>
+                    <ul class="header__menu__dropdown">
+                        <li><a href="./shop-details.html">Current Transaction</a></li>
+                        <li><a href="./shoping-cart.html">Shoping Cart</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="header__top__right__social">
@@ -128,6 +134,12 @@
                         <ul>
                             <li class="active"><a href="./index.html">Home</a></li>
                             <li><a href="{{ route('login') }}">Shop</a></li>
+                            <li><a href="#">Transaction</a>
+                                <ul class="header__menu__dropdown">
+                                    <li><a href="./shop-details.html">Current Transaction</a></li>
+                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
+                                </ul>
+                            </li>
                             </ul>
                     </nav>
                 </div>

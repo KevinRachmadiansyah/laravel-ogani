@@ -38,7 +38,13 @@
             <ul>
                 <li class="active"><a href="./index.html">Home</a></li>
                 <li><a href="{{ route('detail.shop') }}">Shop</a></li>
-                </ul>
+                <li><a href="#">Transaction</a>
+                    <ul class="header__menu__dropdown">
+                        <li><a href="{{route('detail.transaction')}}">Current Transaction</a></li>
+                        <li><a href="./shoping-cart.html">History</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
         <div class="header__top__right__social">
@@ -155,7 +161,13 @@
                         <ul>
                             <li class="active"><a href="{{ url('redirect') }}">Home</a></li>
                             <li><a href="{{ route('detail.shop') }}">Shop</a></li>
-                            </ul>
+                            <li><a href="#">Transaction</a>
+                                <ul class="header__menu__dropdown">
+                                    <li><a href="{{route('detail.transaction')}}"">Current Transaction</a></li>
+                                    <li><a href="./shoping-cart.html">History</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3">

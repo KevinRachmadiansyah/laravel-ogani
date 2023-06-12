@@ -50,6 +50,8 @@ Route::get('cash_order', [HomeController::class, 'cashOrder']);
 Route::get('stripe/{totalPrice}', [HomeController::class, 'stripe']);
 Route::post('stripe/{totalPrice}', [HomeController::class, 'stripePost'])->name('stripe.post');
 Route::get('shop', [HomeController::class, 'showShops'])->name('detail.shop');
+Route::get('getTransactions', [HomeController::class, 'getTransactions'])->name('detail.transaction');
+Route::get('getHistory',[HomeController::class, 'getHistory'])->name('history.transaction');
 Route::get('transactions', [AdminController::class, 'showTransactions']);
 Route::get('transactions/{id}', [AdminController::class, 'delivery_status']);
 

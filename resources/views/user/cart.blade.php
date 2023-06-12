@@ -30,8 +30,14 @@
     </div>
     <nav class="humberger__menu__nav mobile-menu">
         <ul>
-            <li class="active"><a href="{{ url('redirect') }}">Home</a></li>
-            <li><a href="./shop-grid.html">Shop</a></li>
+            <li><a href="{{ url('redirect') }}">Home</a></li>
+            <li><a href="{{route('detail.shop')}}">Shop</a></li>
+            <li><a href="#">Transaction</a>
+                <ul class="header__menu__dropdown">
+                    <li><a href="{{route('detail.transaction')}}">Current Transaction</a></li>
+                    <li><a href="{{route('history.transaction')}}">History</a></li>
+                </ul>
+            </li>
             </ul>
     </nav>
     <div id="mobile-menu-wrap"></div>
@@ -149,7 +155,13 @@
                 <nav class="header__menu">
                     <ul>
                         <li><a href="{{ url('redirect') }}">Home</a></li>
-                        <li class="active"><a href="./shop-grid.html">Shop</a></li>
+                        <li><a href="{{route('detail.shop')}}">Shop</a></li>
+                        <li><a href="#">Transaction</a>
+                            <ul class="header__menu__dropdown">
+                                <li><a href="{{route('detail.transaction')}}">Current Transaction</a></li>
+                                <li><a href="{{route('history.transaction')}}">History</a></li>
+                            </ul>
+                        </li>
                         </ul>
                 </nav>
             </div>
@@ -248,10 +260,10 @@
             <div class="col-lg-12">
                 <div class="shoping__cart__table">
                     @if(session()->has('message'))
-    <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss='alert' aria-hidden="true">x</button>
-        {{ session()->get('message') }}
-    </div>
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss='alert' aria-hidden="true">x</button>
+                        {{ session()->get('message') }}
+                    </div>
                     @endif
                     <table>
                         <thead>

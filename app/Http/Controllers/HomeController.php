@@ -129,7 +129,7 @@ class HomeController extends Controller
 
         $query->decrement('qty', $order->quantity);
 
-        return redirect()->back()->with('message','Your Orders has been Processed. We will get in touch soon...');
+        return redirect()->route('detail.transaction')->with('message','Your Orders has been Processed. We will get in touch soon...');
 
     }
 
@@ -185,7 +185,7 @@ class HomeController extends Controller
 
         $query->decrement('qty', $order->quantity);
 
-        return back();
+        return redirect()->route('detail.transaction')->with('message','Your Orders has been Processed. We will get in touch soon...');
     }
 
     public function destroyItem($id){
@@ -197,4 +197,24 @@ class HomeController extends Controller
         }
         return redirect()->back();
     }
+
+    public function getTransactions(){
+        $sessionId = Auth::user()->id;
+
+        return view ('user.transactions', [
+            'orders' => DB::table('orders')->where('user_id', '=', $sessionId)
+                                                 ->where('delivery_status', '=', 'process')->get()
+        ]);
+    }
+
+    public function getHistory(){
+        $sessionId = Auth::user()->id;
+
+        return view ('user.history', [
+            'orders' => DB::table('orders')->where('user_id', '=', $sessionId)
+                                                 ->where('delivery_status', '=', 'done')->get()
+        ]);
+    }
+
+
 }
