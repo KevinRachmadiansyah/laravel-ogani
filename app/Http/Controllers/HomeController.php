@@ -41,8 +41,12 @@ class HomeController extends Controller
         $totalRevenue=Order::all()->sum('price');
         $totalSales=Order::all()->sum('quantity');
         $totalCheckout=Order::where('payment_status','=','Paid')->count();
+        $totalUser = User::all()->count();
+        $totalCustomer = User::where('usertype','=','0')->count();
+        $totalSupplier = User::where('usertype','=','2')->count();
+        $totalProduct = Product::all()->count();
         if($usertype=='1'){
-            return view('admin.home');
+            return view('admin.home',compact('totalUser','totalCustomer','totalSupplier','totalProduct'));
         }
         else if($usertype=='2'){
             return view('supplier.home', compact('totalOrder','totalRevenue','totalSales','totalCheckout'));

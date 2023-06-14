@@ -45,12 +45,12 @@
                                                     <div class="card-inner">
                                                         <div class="card-title-group">
                                                             <div class="card-title">
-                                                                <h6 class="title">Today Orders</h6>
+                                                                <h6 class="title">Total Users</h6>
                                                             </div>
                                                         </div>
                                                         <div class="data">
                                                             <div class="data-group">
-                                                                <div class="amount">1,945</div>
+                                                                <div class="amount">{{$totalUser}}</div>
                                                                 <div class="nk-ecwg6-ck">
                                                                     <canvas class="ecommerce-line-chart-s3" id="todayOrders"></canvas>
                                                                 </div>
@@ -67,12 +67,12 @@
                                                     <div class="card-inner">
                                                         <div class="card-title-group">
                                                             <div class="card-title">
-                                                                <h6 class="title">Today Revenue</h6>
+                                                                <h6 class="title">Total Customer</h6>
                                                             </div>
                                                         </div>
                                                         <div class="data">
                                                             <div class="data-group">
-                                                                <div class="amount">$2,338</div>
+                                                                <div class="amount">{{ $totalCustomer}}</div>
                                                                 <div class="nk-ecwg6-ck">
                                                                     <canvas class="ecommerce-line-chart-s3" id="todayRevenue"></canvas>
                                                                 </div>
@@ -89,12 +89,12 @@
                                                     <div class="card-inner">
                                                         <div class="card-title-group">
                                                             <div class="card-title">
-                                                                <h6 class="title">Today Customers</h6>
+                                                                <h6 class="title">Total Supplier</h6>
                                                             </div>
                                                         </div>
                                                         <div class="data">
                                                             <div class="data-group">
-                                                                <div class="amount">847</div>
+                                                                <div class="amount">{{ $totalSupplier}}</div>
                                                                 <div class="nk-ecwg6-ck">
                                                                     <canvas class="ecommerce-line-chart-s3" id="todayCustomers"></canvas>
                                                                 </div>
@@ -111,12 +111,12 @@
                                                     <div class="card-inner">
                                                         <div class="card-title-group">
                                                             <div class="card-title">
-                                                                <h6 class="title">Today Visitors</h6>
+                                                                <h6 class="title">Total Products</h6>
                                                             </div>
                                                         </div>
                                                         <div class="data">
                                                             <div class="data-group">
-                                                                <div class="amount">23,485</div>
+                                                                <div class="amount">{{ $totalProduct}}</div>
                                                                 <div class="nk-ecwg6-ck">
                                                                     <canvas class="ecommerce-line-chart-s3" id="todayVisitors"></canvas>
                                                                 </div>

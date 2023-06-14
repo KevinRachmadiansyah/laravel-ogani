@@ -6,14 +6,22 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 
 class SupplierController extends Controller
 {
     public function index(){
-        $id = Auth::user()->id;
-        $product = Product::all();
-        return view('supplier.products.index', compact('product'));
+        // $sessionId = Auth::user()->id;
+        // $product = Product::where('supplier_id','=',$sessionId);
+        // return view('supplier.products.index', compact('product'));
+
+        $sessionId = Auth::user()->id;
+
+        return view ('supplier.products.index', [
+            'product' => DB::table('products')->where('supplier_id', '=', $sessionId)->get(),
+        ]);
     }
     public function add(){
         return view('supplier.products.add');
@@ -52,6 +60,7 @@ class SupplierController extends Controller
         }
 
         $image = $request->file('image')->store('images', 'public');
+        $sessionId = Auth::user()->id;
 
         Product::create([
             'name' =>$request->input('name'),
@@ -60,6 +69,7 @@ class SupplierController extends Controller
             'qty' =>$request->input('qty'),
             'price' =>$request->input('price'),
             'discount' => $request->input('discount'),
+            'supplier_id'=> $sessionId
         ]);
         return redirect()->route('products')
         ->with('success', 'Products succesfully added');

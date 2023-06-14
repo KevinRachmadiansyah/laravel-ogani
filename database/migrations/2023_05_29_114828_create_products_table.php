@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('qty')->nullable();
             $table->string('price')->nullable();
             $table->string('discount')->nullable();
+            $table->string('supplier_id')->nullable();
             $table->timestamps();
         });
     }
